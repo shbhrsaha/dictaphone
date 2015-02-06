@@ -2,7 +2,7 @@
     Records audio to a WAV file
 
     Usage:
-        python recorder.py [output WAV file]
+        python dictaphone.py [output WAV file]
 """
 
 import sys
