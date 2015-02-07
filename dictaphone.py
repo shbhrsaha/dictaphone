@@ -2,12 +2,13 @@
     Records audio to a WAV file
 
     Usage:
-        python dictaphone.py [output WAV file]
+        python dictaphone.py [output WAV file] [(optional) --nobackup]
 """
 
 import sys
 import os
 import time
+import shutil
 import thread
 import pyaudio
 import wave
@@ -121,3 +122,6 @@ if __name__ == "__main__":
     for i in range(counter):
         output.writeframes(data[i][1])
     output.close()
+
+    if len(sys.argv) > 2 and sys.argv[2] == "--nobackup":
+        shutil.rmtree('scratch')
